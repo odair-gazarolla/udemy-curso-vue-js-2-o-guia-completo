@@ -1,0 +1,25 @@
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="desafio">
+	
+	<!-- 1) Show an alert when the button is clcked -->
+	<div>
+		<button v-on:click="exibirAlerta">Exibir Alerta</button>
+	</div>
+
+	<!-- 2) Listen to "keyup" event and store "value" on data propierty (tip: event.target.value)-->
+	<div>
+		<input v-on:keyup="listenkey" type="text">
+		<p>{{ valor }}</p>
+	</div>
+
+	<!-- 3) Adjust the exemple 2 to trigger the "keyup" event only when "Enter" is pressed -->
+	<div>
+		<input v-on:keyup.enter="valor = $event.target.value" type="">
+		<p>{{ valor }}</p>
+	</div>
+
+</div>
+
+<script src="app.js"></script>

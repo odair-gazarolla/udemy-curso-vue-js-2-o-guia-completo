@@ -1,0 +1,24 @@
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+	<!-- v-once >> o vue não fica monitorando os elementos que possuem o atributo v-once, porém só são alterados um vez -->
+	<p v-once> {{ titulo }} </p>
+	<p> {{ saudacao() }} </p>
+	<a v-bind:href="link">Google</a>
+</div>
+
+<script>
+	new Vue({
+		el: '#app',
+		data: {
+			titulo: 'Usando Vue JS!',
+			link: 'http://google.com.br'
+		},
+		methods: {
+			saudacao: function() {
+				return this.titulo
+			}
+		}
+	});
+</script>
