@@ -1,0 +1,58 @@
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- development version, includes helpful console warnings -->
+<script src="https://unpkg.com/vue"></script>
+
+<div id="desafio">
+	
+	<!-- 1) Starting effect using button
+	the effect should alternatly switch classes "destaque" and "encolher"
+	for each setInterval calling. Use div bellow with id "efeito" to associate the classes CSS -->
+
+	<h2>#01</h2>
+	<div>
+		<button @click="iniciarEfeito">Iniciar Efeito</button>
+		<div id="efeito" :class="cssEfeito"></div>
+	</div>
+
+	<!-- 2) Create two CSS classes and associate the div using array sintaxe -->
+	<h2>#2</h2>
+	<div :class="[cl1, cl2]">Estou sem classe CSS :(</div>
+
+	<!-- 3) Set up at the div the class typed by user (create example CSS classes). -->
+	<h2>#3</h2>
+	<div>
+		<input type="text" v-model="cssDigitada">
+		<div :class="cssDigitada"></div>
+	</div>
+
+	<!-- 4) Set up at the div bellow the class typed by user and another class using
+	the value true/false (create example CSS classes) -->
+	<h2>#4</h2>
+	<div>
+		<input type="text" v-model="cssDigitada2">
+		<input type="text" @input="setClass">
+		<div :class="[cssDigitada2, {perigo}]"></div>
+	</div>
+
+	<!-- 5) Repeat the task 3 but using styles instead class CSS. Associate the styles at the div bellow -->
+	<h2>#5</h2>
+	<div>
+		<div :style="[meuEstilo]"></div>
+	</div>
+
+	<!-- 6) Create a simple progress bar with a setInterval and binding style -->
+	<h2>#6</h2>
+	<div>
+		<button @click="iniciarProgresso">Iniciar</button>
+		<div :style="[stProgressBarBorders]">
+			<div :style="[stProgressBar]">
+				<span>{{ progress }}</span>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script src="app.js"></script>
