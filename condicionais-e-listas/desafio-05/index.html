@@ -1,0 +1,68 @@
+
+<script src="https://unpkg.com/vue"></script>
+
+<div id="desafio">
+
+	<!-- 1) Bind the button to changing view of the two paragraphs.
+	Use both v-if and v-show and inspect the elements to see the difference  -->
+	<h2>#1</h2>
+	<div>
+		<button @click="mostrarp1 = !mostrarp1">Alterar</button>
+
+		<p v-if="mostrarp1">Você quer me ver ...</p>
+		<p v-else>...ou eu</p>
+
+		<p v-show="!mostrarp1">Você quer me ver ...</p>
+		<p v-show="mostrarp1">...ou eu</p>
+	</div>
+	
+	<!-- 2) Show in a <ul> an array of elements of your choise and print too the index for each element -->
+	<h2>#2</h2>
+	<ul>
+		<li v-for="(fruta, idx) in frutas">
+			({{ idx+1 }}) {{ fruta }}
+		</li>
+	</ul>
+
+	<!-- 3) Print all the pairs value-key of the folowing object 
+	{
+		titulo: 'O Senhor dos Anéis',
+		autor: 'J.R.R Tolkiens',
+		volume: '3'
+	}
+	print index for each item -->
+
+	<h2>#3</h2>
+	<ul>
+		<li v-for="(vlr, chave) in livro">
+			{{ chave }} = {{ vlr }}
+		</li>
+	</ul>
+
+	<!-- 4) Print the following object (just values) and create a nested loop for array
+	{
+		id: 10,
+		nome: 'Maria',
+		notas: [7.67, 8.33, 6.98, 9,21]
+	}
+	(tip: Use v-for and v-if to solve-->
+	<h2>#4</h2>
+	<ul>
+		<li v-for="(vlr, chave) in aluno">
+			<template v-if="!Array.isArray(vlr)">
+				{{ chave }} = {{ vlr }}
+			</template>
+			<template v-else>
+				Notas:
+				<ul>
+					<li v-for="(v, i) in vlr">
+						{{ v }}
+					</li>
+				</ul>				
+			</template>
+		</li>
+	</ul>
+
+</div>
+
+<script src="app.js"></script>
