@@ -1,0 +1,31 @@
+<meta charset="utf-8">
+
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app1">
+	
+	{{ titulo }}
+
+	<button @click="alterar">Alterar</button>
+
+</div>
+
+<script>
+	const vm = new Vue({
+
+		el: "#app1",
+		data: {
+
+			titulo: 'Titulo 1'
+		},
+		methods: {
+
+			alterar() {
+
+				this.titulo += '!'
+			}
+		}
+	});
+
+	console.log('Digite "vm" aqui no cosole para exibir o objeto Vue')
+</script>

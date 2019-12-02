@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+
+<script src="https://unpkg.com/vue"></script>
+
+
+<!-- The interpolation "novaInfo" will trigger a warn because it is not a
+reactive property, just the properties created together the instace Vue are defined as reactive -->
+<div id="app1">
+	
+	{{ titulo }}  {{ novaInfo }}
+
+	<button @click="alterar">Alterar</button>
+
+</div>
+
+<script>
+	const vm = new Vue({
+
+		el: "#app1",
+		data: {
+
+			titulo: 'Titulo 1'
+		},
+		methods: {
+
+			alterar() {
+
+				this.titulo += '!'
+			}
+		}
+	});
+
+	vm.novaInfo = 'Teste';
+	console.log(vm.novaInfo);
+</script>
