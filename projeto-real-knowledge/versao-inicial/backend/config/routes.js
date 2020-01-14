@@ -7,7 +7,7 @@ module.exports = app => {
 	app.post('/validateToken', app.api.auth.validateToken)
 
 	app.route('/users')
-		// .all(app.config.passport.authenticate())
+		.all(app.config.passport.authenticate())
 		.post(app.api.user.save)
 		.get(app.api.user.get)
  
@@ -22,7 +22,7 @@ module.exports = app => {
 
 
 	app.route('/categories/tree')
-		// .all(app.config.passport.authenticate())
+		.all(app.config.passport.authenticate())
 		// .get(admin(app.api.category.getTree))
 		.get(app.api.category.getTree)
 
@@ -32,10 +32,12 @@ module.exports = app => {
 		.delete(app.api.category.remove)
 
 	app.route('/articles')
+		.all(app.config.passport.authenticate())
 		.get(app.api.article.get)
 		.post(app.api.article.save)
 
 	app.route('/articles/:id')
+		.all(app.config.passport.authenticate())
 		.get(app.api.article.getById)
 		.put(app.api.article.save)
 		.delete(app.api.article.remove)
