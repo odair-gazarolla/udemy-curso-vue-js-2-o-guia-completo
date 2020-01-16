@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Flexbox #2</title>
+
+	<style type="text/css">
+		div {
+
+			border: solid 5px #0DFDFD;
+			font-size: 40px;
+		}
+
+		.flex-container div {
+
+			box-sizing: border-box;
+		}
+
+		.flex-container {
+
+			display: flex;
+			height: 300px;
+			width: 600px;
+		}
+
+		.flex-container div:nth-child(3) {
+
+			background-color: #CCC;
+			order: 1; /*Go to the end*/
+			order: 0; /*default alignment*/
+			order: -1; /*Go to the start*/
+			align-self: center;
+			align-self: stretch;
+		}
+
+		.flex-container div {
+
+			width: 100px;
+			flex-grow: 0;
+			flex-grow: 1; /*All divs grow by equal width*/
+		}
+
+		.flex-container div:nth-child(1) {
+
+			flex-grow: 2; /*Just the div number one is going to grow more than others one*/
+		}
+
+		.flex-container {
+
+			width: 300px;
+			flex-shrink: 1; /*encolher*/
+		}
+
+		.flex-container div:nth-child(1) {
+
+			flex-shrink: 5; /*div number one is going to shrink more than others one*/
+		}
+
+	</style>
+</head>
+<body>
+	<div class="flex-container">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+	</div>
+</body>	
+</html>
