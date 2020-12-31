@@ -1,16 +1,18 @@
 <template>
 	<div id="app">
-		<h1>Calculadora</h1>
-		<Calculator />
+		<!-- <h1>Calculadora</h1>
+		<Calculator /> -->
+		<autocomplete :suggestions="cities" :selection.sync="value"></autocomplete>
 	</div>
 </template>
 
 <script>
-	import Calculator from './main/Calculator.vue'
+	// import Calculator from './main/Calculator.vue'
+	import Autocomplete from './autocomplete/autocomplete.vue';
 
 	export default {
 
-		components: { Calculator }
+		components: { /*Calculator,*/ Autocomplete },
 	}
 </script>
 
